@@ -1,0 +1,454 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <title>CodePen - A Pen by elahe</title>
+  
+  
+  
+  
+<style>
+@import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+
+:root{
+  --color-white: #f3f3f3;
+  --color-darkblue: #1b1b32;
+  --color-darkblue-alpha: rgba(27, 27, 50, 0.8);
+  --color-green: #37af65
+}
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+body{
+  font-family: 'poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-white);
+  margin: 0;
+}
+/* mobile friendly alternative to using background-attachment: fixed */
+body::before {
+  content:'';
+  position:fixed;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  z-index: -1;
+  background: var(--color-darkblue);
+  background-image: linear-gradient(
+  115deg,
+  rgba(58, 58, 158, 0.8),
+  rgba(136, 136,206,0.7)
+  ),
+ url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+    }
+h1 {
+  font-weight: 400;
+  line-height: 1.2;
+  }
+p{
+  font-size: 1.125rem;
+}
+h1,
+p {
+margin-top: 0;
+margin-bottom: 0.5rem;
+}
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  margin-bottom: 0.5rem;
+}
+input,
+button,
+select,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+button {
+  border: none;
+ }
+.container {
+  width: 100%;
+  margin: 3.125rem auto 0 auto;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width:768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+.header {
+  padding: 0 0.625rem;
+  margin-bottom: 1.875rem;
+}
+.description {
+  font-style: italic;
+  font-weight: 200;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+.clue {
+  margin-left: 0.25rem;
+  font-size: 0.9rem;
+  color: #e4e4e4;
+  }
+.text-center {
+  text-align: center;
+ }
+/*form*/
+form {
+  background: var(--color-darkblue-alpha);
+  padding: 2.5rem 0.625rem;
+  border-radius: 0.25rem;
+}
+@media (min-width: 480px) {
+  form{
+    padding: 2.5rem;
+  }
+}
+.form-group {
+  margin: 0 auto: 1.25rem auto;
+  padding: 0.25rem;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 2.375rem;
+  padding: 0.375rem 0.75rem;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+.form-control:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+#input-radio,
+#input-checkbox {
+  display: block;
+  margin-right: 0.625rem;
+  min-height: 1.25rem;
+  min-width: 1.25rem;
+  
+}
+
+.input-textarea {
+  min-height: 120px;
+  width: 100%;
+  padding: 0.625rem;
+  resize: vertical;
+}
+submit-button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--color-green);
+  color: inherit;
+  border-radius: 2px;
+}
+.submit-button {
+  display: block;
+  width: 100%;
+  padding 0.75rem;
+  background: var(--color-green);
+  color: inherit;
+  border-radius: 2px;
+  cursor: pointer;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <div class="container">
+ <header class= "header">
+   <h1 id="title" class="text"-center>EliRose Acupuncture survey form</h1>
+   <p id="description" class="description text-center">thank you for taking the time to help us improve our clinic</p>
+  </header>
+  <form id="survey-form">
+    <div class="form-group">
+      <label id="name-label"
+  for="name">Name</label>
+      <input
+             type="text"
+             name="name"
+             id="name"
+             class="form-control"
+             placeholder="Enter your name"
+             required
+             />
+         </div>
+    <div class="form-group">
+      <label id="email-label"
+  for="email">Email</label>
+      <input
+          type="email"
+          name="email"
+          id="email"
+          class="form-control"
+          placeholder="Enter your Email"
+             required
+            />
+    </div>
+    
+    <div class="form-group">
+      <label id="number-label" for="number">Age<span class="clue">(optional)</span></label>
+      <input
+             type="number"
+             name="age"
+             id="number"
+             min="1o"
+             max="99"
+             class="form-control"
+             placeholder="age"
+             />
+    </div>
+    
+    <div class="form-group">
+      <p>Which option best describe why you came to see us?</p>
+      <select id="dropdown" type="radio"  name="role" class="form-control" required>
+        <option disabled selected value>Select current reason</option>
+        <option value="wellbeing">acupuncture for well-being</option>       <option value="pulse">for a chinese pulse check up</option>
+        <option value="problem">because of an ongoing problem</option>
+        <option value="treatment">for a seasonal acupuncture treatment</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    
+    <div >
+      <p>Would you recommend EliRose acupuncture clinic to a friend?</p>
+      <input type="radio" name="recommend" id="for-sure" value="for-sure"/><label for="for-sure">for sure</label> <br>
+      
+       <input type="radio" name="recommend" id="maybe" value="maybe"/><label for="maybe">Maybe</label> <br>
+      
+       <input type="radio" name="recommend" id="not-sure" value="not-sure"/><label for="not-sure">Not sure</label>
+    </div>
+    <br>
+    
+    <div class="form-group">
+      <p>What is your favorite treatment of Acupuncture?</p>
+      <select id="most-like" name="most-like"  class="form-control" required>
+                                                                <option disabled selected value>Select an option</option>
+                                                                <option
+   value="moxa">Moxa</option>
+                                                                <option
+                                                value="needling">Needling</option>
+                                                                 <option   value="cupping">Cupping</option>
+                                                                                        
+                                                                 </select>
+                                                                  </div>
+    <div class="form-group">
+      <p>Are you filling in this survey for?</p>
+      <select id="most-like" name="mostLike" class="form-control" required>
+        <option disabled selected value>Select an option</option>
+        <option value="you">yourself</option>
+        <option value="child">your child</option>
+        <option value="partner">your partner</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <p>
+        Please check any of the following you currently have:
+        <span class="clue">(Check all that apply)</span>
+      </p>
+
+      <label
+        ><input
+          name="prefer"
+          value="Allergies"
+          type="checkbox"
+          class="checked"
+                />Allergies</label>
+      <br>
+      
+      <label>
+        <input
+          name="prefer"
+          value="back-pain"
+          type="checkbox"
+          class="checked"
+               />Back pain</label>
+      <br>
+      
+      <label
+        ><input
+          name="prefer"
+          value="headache"
+          type="checkbox"
+          class="checked"
+                />Headache</label>
+      <br>
+      
+      <label
+        ><input
+          name="prefer"
+          value="dizziness"
+          type="checkbox"
+          class="checked"
+                />Dizziness</label>
+      <br>
+     
+      <label
+        ><input
+          name="prefer"
+          value="digestive-problem"
+          type="checkbox"
+          class="checked"
+                />Digestive problem</label>
+      <br>
+      
+      <label
+        ><input
+          name="prefer"
+          value="fatigue"
+          type="checkbox"
+          class="checked"
+                />Fatigue</label>
+      <br>
+      
+      <label
+        ><input
+          name="prefer"
+          value="depression"
+          type="checkbox"
+          class="checked"
+                />Depression</label>
+      <br>
+      
+      <label
+        ><input
+          name="prefer"
+          value="irritability"
+          type="checkbox"
+          class="checked"
+                />Irritability</label>
+      <br>
+      
+      <label
+        ><input
+          name="prefer"
+          value="shoulder-neck pain"
+          type="checkbox"
+          class="checked"
+                />Shoulder-neck pain</label>
+      <br>
+      <label
+        ><input
+          name="prefer"
+          value="Menstrual problems"
+          type="checkbox"
+          class="checked"
+                />Menstrual problem</label>
+      <br>
+      
+      <label
+        ><input
+          name="prefer"
+          value="difficulty-sleeping"
+          type="checkbox"
+          class="checked"
+        />Difficulty sleeping</label>
+    </div>
+              
+                 
+  <div class="form-group">
+        <p>Any comments or suggestions?</p>
+          <textarea
+            id="comments"
+            class="input-textarea"
+            name="comment"
+            placeholder="Enter your comment here..."></textarea>
+        </div>
+         <div class="form-group">
+                                                        <button type="submit" id="submit" class="submit-button">Submit</button>
+      </div>
+     </form>  
+    </div>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+  <script src='https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js'></script>
+      <script id="rendered-js" >
+// !! IMPORTANT README:
+
+// You may add additional external JS and CSS as needed to complete the project, however the current external resource MUST remain in place for the tests to work. BABEL must also be left in place. 
+
+/***********
+INSTRUCTIONS:
+  - Select the project you would 
+    like to complete from the dropdown 
+    menu.
+  - Click the "RUN TESTS" button to
+    run the tests against the blank 
+    pen.
+  - Click the "TESTS" button to see 
+    the individual test cases. 
+    (should all be failing at first)
+  - Start coding! As you fulfill each
+    test case, you will see them go   
+    from red to green.
+  - As you start to build out your 
+    project, when tests are failing, 
+    you should get helpful errors 
+    along the way!
+    ************/
+
+// PLEASE NOTE: Adding global style rules using the * selector, or by adding rules to body {..} or html {..}, or to all elements within body or html, i.e. h1 {..}, has the potential to pollute the test suite's CSS. Try adding: * { color: red }, for a quick example!
+
+// Once you have read the above messages, you can delete all comments.
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
+</html>
+ 
